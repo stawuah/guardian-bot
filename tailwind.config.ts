@@ -13,12 +13,37 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Bricolage Grotesque"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          2: "hsl(var(--ink2))",
+          3: "hsl(var(--ink3))",
+          4: "hsl(var(--ink4))",
+        },
+        line: {
+          DEFAULT: "hsl(var(--line))",
+          2: "hsl(var(--line2))",
+        },
+        sentinel: {
+          green: "hsl(var(--green))",
+          "green-surface": "hsl(var(--green-surface))",
+          red: "hsl(var(--red))",
+          "red-surface": "hsl(var(--red-surface))",
+          amber: "hsl(var(--amber))",
+          "amber-surface": "hsl(var(--amber-surface))",
+          blue: "hsl(var(--blue))",
+          "blue-surface": "hsl(var(--blue-surface))",
+        },
+        surface: "hsl(var(--white))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -65,25 +90,22 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.35" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        blink: "blink 2s ease infinite",
       },
     },
   },
